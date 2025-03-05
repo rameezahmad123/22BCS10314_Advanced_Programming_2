@@ -1,0 +1,38 @@
+ Contains Duplicate
+Attempted
+Easy
+Topics
+Companies
+Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+
+Code:-
+#include <iostream>
+using namespace std;
+
+class Solution {
+public:
+    bool containsDuplicate(int nums[], int n) {
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (nums[i] == nums[j]) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+};
+
+int main() {
+    Solution sol;
+    int nums[] = {1, 2, 3, 4, 5, 1}; // Example input
+    int n = sizeof(nums) / sizeof(nums[0]);
+
+    if (sol.containsDuplicate(nums, n)) {
+        cout << "Contains duplicate" << endl;
+    } else {
+        cout << "No duplicate found" << endl;
+    }
+
+    return 0;
+}
